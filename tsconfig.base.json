@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@so-rung/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@so-rung/dashboard": ["libs/client/dashboard/src/index.ts"],
+      "@so-rung/infra-mongo": ["libs/infra/mongo/src/index.ts"],
+      "@so-rung/records": ["libs/client/records/src/index.ts"],
+      "@so-rung/shell": ["libs/client/shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
