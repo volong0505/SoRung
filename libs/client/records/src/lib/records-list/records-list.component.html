@@ -1,6 +1,6 @@
 <div>
     <div class="add-field">
-
+      <lib-records-list-add></lib-records-list-add>
     </div>
 
     <div class="table">
@@ -28,5 +28,15 @@
               </tr>
             </tbody>
           </nz-table>
+
+          <div class="pagination">
+            <nz-pagination
+            [(nzPageIndex)]="current"
+            [nzTotal]="50"
+            [nzSize]="'small'"
+            nzShowSizeChanger
+          ></nz-pagination>
+          </div>
+      
     </div>
 </div>

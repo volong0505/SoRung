@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
   templateUrl: './records-list.component.html',
   styleUrl: './records-list.component.css',
 })
-export class RecordsListComponent {}
+export class RecordsListComponent {
+  current = 1;
+}
