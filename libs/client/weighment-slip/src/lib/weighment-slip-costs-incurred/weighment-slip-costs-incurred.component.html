@@ -1,0 +1,14 @@
+<nz-table  #basicTable [nzData]="data"  [nzShowPagination]="false">
+    <thead>
+      <tr>
+        <th>Chi phí phát sinh</th>
+        <th>Tiền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data">
+        <td>{{item.expense}}</td>
+        <td>{{item.amount}}</td>
+      </tr>
+    </tbody>
+  </nz-table>

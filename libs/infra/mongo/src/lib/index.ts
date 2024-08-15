@@ -1,8 +1,8 @@
-import { RecordSchemaFeature } from './record';
+import { ForestSchemaFeature } from './forest';
 
-export * from './record';
+export * from './forest';
 export * from './infra-mongo.module';
 
 export const mongoSchemas = [
-    RecordSchemaFeature
+    ForestSchemaFeature
 ]

@@ -10,6 +10,8 @@ import { NzMenuModule } from "ng-zorro-antd/menu";
 import { ShellComponent } from "./shell/shell.component";
 import { ShellRouterModule } from "./shell-router.module";
 import { provideHttpClient } from "@angular/common/http";
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
 
 @NgModule({
     imports: [
@@ -21,6 +23,8 @@ import { provideHttpClient } from "@angular/common/http";
         NzBreadCrumbModule,
         NzGridModule,
         ShellRouterModule,
+        StoreModule.forRoot(),
+        EffectsModule.forRoot(),
     ],
     declarations: [
         ShellComponent

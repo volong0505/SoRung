@@ -1,0 +1,72 @@
+<div class="container">
+  <nz-table nzTemplateMode [nzTableLayout]="'fixed'" [nzShowPagination]="false" [nzLoading]="isLoading" nzBordered>
+    <thead>
+      <tr>
+        <th>Ngày cân</th>
+        <th>Loại hàng</th>
+        <th>Trọng lượng (tấn)</th>
+        <th>Giá</th>
+        <th>Thành tiền</th>
+        <th>Note</th>
+        <th>Tổng trọng lượng</th>
+        <th>Thành tiền</th>
+        <th>Tiền xâu</th>
+        <th>Tiền xe</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <ng-container *ngFor="let item of data">
+        <tr *ngFor="let record of item.weight_slip, index as i ">
+          <ng-container>
+
+            <!-- Ngày cân -->
+            <td>
+                {{record.date}}
+            </td>
+
+            <!-- Loại hàng -->
+            <td>
+                {{record?.type}}
+            </td>
+
+            <!-- Trọng lượng -->
+            <td>
+                {{record?.weight}}
+
+            </td>
+
+
+            <!-- Giá -->
+            <td>
+                {{record?.price}}
+            </td>
+
+            <!-- Thành tiền -->
+            <td>
+                {{record?.money}}
+            </td>
+
+            <td></td>
+
+            <td *ngIf="i == 0" [rowSpan]="item.weight_slip.length">
+              {{item.weight_total}}
+            </td>
+            <td *ngIf="i == 0" [rowSpan]="item.weight_slip.length">
+              {{item.total_money}}
+            </td>
+            <td *ngIf="i == 0" [rowSpan]="item.weight_slip.length">
+              {{item.xau}}
+            </td>
+            <td *ngIf="i == 0" [rowSpan]="item.weight_slip.length">
+              {{item.xe}}
+            </td>
+            <td *ngIf="i == 0" [rowSpan]="item.weight_slip.length">
+              Đợt {{item.batch}}
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </nz-table>
+</div>

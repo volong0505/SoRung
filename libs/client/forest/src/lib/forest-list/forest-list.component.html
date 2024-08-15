@@ -1,0 +1,73 @@
+<div>
+  <div class="table">
+    <div>
+      <nz-page-header [nzGhost]="false">
+        <nz-page-header-title>Danh sách rừng</nz-page-header-title>
+        <nz-page-header-extra>
+          <nz-space>
+
+            <lib-forest-list-add *nzSpaceItem (reload)="load()"/>
+            <nz-divider *nzSpaceItem nzType="vertical"></nz-divider>
+
+            <button *nzSpaceItem nz-button nzType="text" (click)="load()" [nzLoading]="isLoading">
+
+              <span nz-icon nzType="reload" nzTheme="outline"></span>
+            </button>
+
+          </nz-space>
+        </nz-page-header-extra>
+      </nz-page-header>
+    </div>
+
+
+    <div>
+      <nz-table nzTemplateMode [nzShowPagination]="false" [nzLoading]="isLoading">
+        <thead>
+          <tr>
+            <th nzWidth="10px">STT</th>
+            <th nzWidth="250px">Chủ rừng</th>
+            <th nzWidth="250px">Vị trí rừng</th>
+            <th nzWidth="100px">Loại rừng</th>
+            <th nzWidth="150px">Ngày mua</th>
+            <th nzWidth="100px">Trạng thái</th>
+            <th nzWidth="150px">Giá mua</th>
+            <th nzWidth="150px">Bán ra</th>
+            <th nzWidth="250px">Mô tả</th>
+            <th nzWidth="150px"></th>
+          </tr>
+        </thead>
+        <tbody class="tbody">
+          <tr *ngFor="let item of data, index as i " >
+            <td>{{i + 1}}</td>
+            <td>{{item?.forest_owner}}</td>
+            <td>{{item?.forest_location}}</td>
+            <td>
+              <lib-type-of-forest-component [type_of_forest]="item.type_of_forest" />
+            </td>
+            <td>{{item?.date_of_purchase | date: 'dd-MM-yyyy'}}</td>
+            <td>
+              <lib-status-component [status]="item.status" />
+
+            </td>
+            <td>{{item.purchase_price | VNDCurrencyPipe}}</td>
+            <td>--</td>
+            <td>{{item.describe}}</td>
+            <td>
+              <a [routerLink]="['/phieu-can', item?.id]"><span nz-icon nzType="eye" nzTheme="outline"></span></a>
+
+              <nz-divider nzType="vertical"></nz-divider>
+              <lib-forest-list-edit (reload)="load()" [id]="item.id"/>
+
+              <nz-divider nzType="vertical"></nz-divider>
+              <a href="#"><span nz-icon nzType="delete" nzTheme="outline"></span></a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+
+      <!-- <div class="pagination">
+        <nz-pagination [(nzPageIndex)]="current" [nzTotal]="50" [nzSize]="'small'" nzShowSizeChanger></nz-pagination>
+      </div> -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<nz-tag *ngIf="status=='done'" nzColor="success">HOÀN THÀNH</nz-tag>
+<nz-tag *ngIf="status=='processing'" nzColor="processing">ĐANG XỬ LÝ</nz-tag>
+<nz-tag *ngIf="status=='cede'" [nzColor]="'gold'">NHƯỢNG LẠI</nz-tag>
+<nz-tag *ngIf="status=='pending'" nzColor="default">CHỜ</nz-tag>

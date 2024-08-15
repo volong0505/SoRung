@@ -9,7 +9,7 @@ const routes: Routes = [
       children: [
         {
           path: '',
-          redirectTo: 'records',
+          redirectTo: 'danh-sach-rung',
           pathMatch: 'full'
         },
         {
@@ -17,8 +17,12 @@ const routes: Routes = [
           loadChildren: () => import('@so-rung/dashboard').then(m => m.DashboardModule)
         },
         {
-          path: 'records',
-          loadChildren: () => import('@so-rung/records').then(m => m.RecordsModule)
+          path: 'danh-sach-rung',
+          loadChildren: () => import('@so-rung/forest').then(m => m.ForestModule)
+        },
+        {
+          path: 'phieu-can/:id',
+          loadChildren: () => import('@so-rung/weighment-slip').then(m => m.WeighmentSlipModule)
         }
       ]
     },

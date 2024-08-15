@@ -1,0 +1,132 @@
+<div class="container">
+  <nz-table nzTemplateMode [nzTableLayout]="'fixed'" [nzShowPagination]="false" [nzLoading]="isLoading" nzBordered>
+    <thead>
+      <tr>
+        <th nzWidth="14%">Ngày cân</th>
+        <th nzWidth="11%">Loại hàng</th>
+        <th nzWidth="13%">Trọng lượng (tấn)</th>
+        <th nzWidth="8%">Giá</th>
+        <th nzWidth="8%">Cước xâu</th>
+        <th nzWidth="8%">Cước xe</th>
+        <th nzWidth="8%">Đợt</th>
+        <th nzWidth="9%">Đã tính tiền</th>
+        <th nzWidth="17%">Note</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody class="tbody">
+      <tr *ngFor="let item of data" class="editable-row">
+        <!-- Ngày cân -->
+        <td>
+          <nz-date-picker nzSize="small" [nzFormat]="'dd/MM/yyyy'" [(ngModel)]="item.date"></nz-date-picker>
+        </td>
+
+        <!-- Loại hàng -->
+        <td>
+          <nz-select nzSize="small" [(ngModel)]="item.type">
+            <nz-option nzValue="GIẤY" nzLabel="GIẤY"></nz-option>
+            <nz-option nzValue="BALLET" nzLabel="BALLET"></nz-option>
+            <nz-option nzValue="VANH" nzLabel="VANH"></nz-option>
+          </nz-select>
+        </td>
+
+        <!-- Trọng lượng -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.weight" type="number" />
+        </td>
+
+        <!-- Giá -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.price" type="number" />
+        </td>
+
+        <!-- Cước xâu -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.cuoc_xau" type="number" />
+        </td>
+
+        <!-- Cước xe -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.cuoc_xe" type="number" />
+        </td>
+
+        <!-- Đợt -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.batch" type="number" />
+        </td>
+
+        <!-- Đã tính tiền với xâu -->
+        <td>
+          <nz-switch nzSize="small" [(ngModel)]="item.already_paid"></nz-switch>
+        </td>
+
+        <!-- Note -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="item.note" />
+        </td>
+
+        <!-- Action -->
+        <td>
+          <a href="#"><span nz-icon nzType="delete" nzTheme="outline"></span></a>
+        </td>
+      </tr>
+
+      <tr class="editable-row">
+        <!-- Ngày cân -->
+        <td>
+          <nz-date-picker nzSize="small" [nzFormat]="'dd/MM/yyyy'"
+            [(ngModel)]="new_meighment_slip.date"></nz-date-picker>
+        </td>
+
+        <!-- Loại hàng -->
+        <td>
+          <nz-select nzSize="small" [(ngModel)]="new_meighment_slip.type">
+            <nz-option nzValue="GIẤY" nzLabel="GIẤY"></nz-option>
+            <nz-option nzValue="BALLET" nzLabel="BALLET"></nz-option>
+            <nz-option nzValue="VANH" nzLabel="VANH"></nz-option>
+          </nz-select>
+        </td>
+
+        <!-- Trọng lượng -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.weight" type="number" />
+        </td>
+
+        <!-- Giá -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.price" type="number" />
+        </td>
+
+        <!-- Cước xâu -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.cuoc_xau" type="number" />
+        </td>
+
+        <!-- Cước xe -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.cuoc_xe" type="number" />
+        </td>
+
+        <!-- Đợt -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.batch" type="number" />
+        </td>
+
+        <!-- Đã tính tiền với xâu -->
+        <td>
+          <nz-switch nzSize="small" [(ngModel)]="new_meighment_slip.already_paid"></nz-switch>
+        </td>
+
+        <!-- Note -->
+        <td>
+          <input nzSize="small" nz-input [(ngModel)]="new_meighment_slip.note" />
+        </td>
+
+        <!-- Action -->
+        <td>
+          <a href="#"><span nz-icon nzType="delete" nzTheme="outline"></span></a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>

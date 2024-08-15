@@ -16,10 +16,14 @@
     "baseUrl": ".",
     "paths": {
       "@so-rung/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@so-rung/client-pipes": ["libs/client/_shared/pipes/src/index.ts"],
+      "@so-rung/client-ui": ["libs/client/_shared/ui/src/index.ts"],
+      "@so-rung/client-utils": ["libs/client/_shared/utils/src/index.ts"],
       "@so-rung/dashboard": ["libs/client/dashboard/src/index.ts"],
+      "@so-rung/forest": ["libs/client/forest/src/index.ts"],
       "@so-rung/infra-mongo": ["libs/infra/mongo/src/index.ts"],
-      "@so-rung/records": ["libs/client/records/src/index.ts"],
-      "@so-rung/shell": ["libs/client/shell/src/index.ts"]
+      "@so-rung/shell": ["libs/client/shell/src/index.ts"],
+      "@so-rung/weighment-slip": ["libs/client/weighment-slip/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

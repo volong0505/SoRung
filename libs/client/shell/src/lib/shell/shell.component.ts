@@ -17,10 +17,10 @@ export class ShellComponent {
     //   url: 'dashboard'
     // },
     {
-      title: 'Records',
+      title: 'Danh sách rừng',
       icon: 'table',
       selected: false,
-      url: 'record'
+      url: 'danh-sach-rung'
     }
   ]
 }

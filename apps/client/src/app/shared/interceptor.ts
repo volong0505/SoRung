@@ -20,7 +20,7 @@ export class ApiInterceptor implements HttpInterceptor {
     }
 }
 
-export const apiInterceptorProvider: (host: string) => Provider = (host: string): Provider => ({
+export const apiInterceptorProvider: (host: string) => Provider = (host: string) => ({
     provide: HTTP_INTERCEPTORS,
     useValue: new ApiInterceptor(host),
     multi: true

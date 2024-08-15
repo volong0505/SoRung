@@ -1,0 +1,93 @@
+<a (click)="open()"><span nz-icon nzType="edit" nzTheme="outline"></span></a>
+
+  <nz-drawer [nzBodyStyle]="{ overflow: 'auto' }" [nzMaskClosable]="false" [nzWidth]="500" [nzVisible]="visible"
+    nzTitle="Tạo rừng" [nzFooter]="footerTpl" (nzOnClose)="close()">
+    <form nz-form *nzDrawerContent [formGroup]="validateForm">
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Chủ rừng</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="forest_owner" id="forest_owner" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Vị trí rừng</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="forest_location" id="forest_location" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Giá mua</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="purchase_price" id="purchase_price" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Giá bán ra</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="profit" id="profit" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Ngày mua</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-date-picker nzFormat="dd/MM/yyyy" formControlName="purchase_date"></nz-date-picker>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Trạng thái</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-select formControlName="status" id="status">
+            <nz-option nzLabel="CHỜ" nzValue="pending"></nz-option>
+            <nz-option nzLabel="ĐANG XỬ LÝ" nzValue="processing"></nz-option>
+            <nz-option nzLabel="HOÀN THÀNH" nzValue="done"></nz-option>
+            <nz-option nzLabel="NHƯỢNG LẠI" nzValue="cede"></nz-option>
+
+          </nz-select>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Loại rừng</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <nz-radio-group formControlName="forest_type" id="forest_type">
+            <label nz-radio nzValue="KEO">KEO</label>
+            <label nz-radio nzValue="CAO SU">CAO SU</label>
+          </nz-radio-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Mô tả</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input formControlName="describe" id="describe" nz-input />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Giá xâu</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="labor_cost" id="labor_cost" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="6" [nzXs]="24">Giá xe</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input nz-input formControlName="transport_cost" id="transport_cost" />
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+
+    <ng-template #footerTpl>
+      <div style="float: right">
+        <button nz-button style="margin-right: 8px;" (click)="close()">Huỷ</button>
+        <button nz-button nzType="primary" (click)="onSubmit()">Lưu</button>
+      </div>
+    </ng-template>
+  </nz-drawer>
