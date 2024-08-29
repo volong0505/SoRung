@@ -5,7 +5,7 @@ export class UpsertForestDto {
     ForestOwner: string;
     ForestLocation: string;
     ForestPurchase: Forest_Purchase;
-    DateOfPurchase: Date;
+    PurchaseDate: Date;
     Profit: number;
     Status: string;
     ForestType: string;

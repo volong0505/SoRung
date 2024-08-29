@@ -42,9 +42,9 @@
             <td>{{item?.forest_owner}}</td>
             <td>{{item?.forest_location}}</td>
             <td>
-              <lib-type-of-forest-component [type_of_forest]="item.type_of_forest" />
+              <lib-type-of-forest-component [forest_type]="item.forest_type" />
             </td>
-            <td>{{item?.date_of_purchase | date: 'dd-MM-yyyy'}}</td>
+            <td>{{item?.purchase_date | date: 'dd-MM-yyyy'}}</td>
             <td>
               <lib-status-component [status]="item.status" />
 
@@ -56,6 +56,7 @@
               <a [routerLink]="['/phieu-can', item?.id]"><span nz-icon nzType="eye" nzTheme="outline"></span></a>
 
               <nz-divider nzType="vertical"></nz-divider>
+              
               <lib-forest-list-edit (reload)="load()" [id]="item.id"/>
 
               <nz-divider nzType="vertical"></nz-divider>

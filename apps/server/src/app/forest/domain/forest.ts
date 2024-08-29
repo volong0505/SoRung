@@ -14,7 +14,7 @@ export type ForestOptionalProperties = Readonly<
         ForestLocation: string;
         ForestType: "KEO" | "CAO SU";
         ForestPurchase: Forest_Purchase;
-        DateOfPurchase: Date;
+        PurchaseDate: Date;
         Status: string;
         Profit: number;
         Describe: string
@@ -36,7 +36,7 @@ export class ForestImplement extends AggregateRoot implements Forest {
     private _id: string;
     private Name: string;
     private Type: string;
-    private DateOfPurchase: Date;
+    private PurchaseDate: Date;
     private Status: string;
     private PurchaPrice: number;
     Profit: number;

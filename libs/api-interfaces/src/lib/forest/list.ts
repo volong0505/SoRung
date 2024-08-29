@@ -9,11 +9,15 @@ export class ForestListItem {
     id!: string;
     forest_owner!: string;
     forest_location!: string;
+    forest_type!: "KEO" | "CAO SU";
+
     describe!: string;
-    type_of_forest!: string;
     status!: string;
-    date_of_purchase!: Date;
+    purchase_date!: Date;
     purchase_price!: number;
+    profit!: number;
+    labor_cost!: number;
+    transport_cost!: number;
 }
 
 export class ForestGetListResponse {

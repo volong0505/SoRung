@@ -19,7 +19,7 @@ export class ForestService {
             id: params.id,
             ForestOwner: params.forest_owner,
             ForestLocation: params.forest_location,
-            DateOfPurchase: params.purchase_date,
+            PurchaseDate: params.purchase_date,
             Profit: params.profit,
             Status: params.status,
             ForestType: params.forest_type,

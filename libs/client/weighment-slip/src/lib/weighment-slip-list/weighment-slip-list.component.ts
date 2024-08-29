@@ -36,7 +36,6 @@ const data = [
         weight: 10960,
         price: 11.4,
         money: 12494,
-    
       },
       {
         id: '2',

@@ -21,7 +21,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzSpinModule } from 'ng-zorro-antd/spin';
-
+import { NzSwitchModule } from 'ng-zorro-antd/switch'
 // PIPES
 import { PipesModule } from '@so-rung/client-pipes';
 
@@ -33,6 +33,7 @@ import { ForestEffects } from './+state/forest.effects';
 import * as fromForest from './+state/forest.reducer';
 import { ForestService } from './forest.service';
 import { ForestListEditComponent } from './forest-list-edit/forest-list-edit.component';
+import { ForestListDetailComponent } from './forest-list-detail/forest-list-detail.component';
 
 const routes: Routes = [
   {
@@ -55,21 +56,22 @@ const routes: Routes = [
     RouterModule.forChild(routes),
 
     // NG-ZORRO
-    NzTableModule,
     NzPaginationModule,
     NzDividerModule,
-    NzIconModule,
     NzPageHeaderModule,
     NzSpaceModule,
     NzButtonModule,
     NzDrawerModule,
-    NzFormModule,
-    NzSelectModule,
-    NzGridModule,
-    NzInputModule,
     NzDatePickerModule,
     NzRadioModule,
     NzSpinModule,
+    NzTableModule,
+    NzFormModule,
+    NzGridModule,
+    NzInputModule,
+    NzIconModule,
+    NzSelectModule,
+    NzSwitchModule,
 
     //Pipes
     PipesModule,
@@ -87,7 +89,8 @@ const routes: Routes = [
     ForestComponent,
     ForestListComponent,
     ForestListAddComponent,
-    ForestListEditComponent
+    ForestListEditComponent,
+    ForestListDetailComponent
   ],
   providers: [
     ForestService

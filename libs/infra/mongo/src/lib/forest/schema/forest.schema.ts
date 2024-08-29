@@ -33,7 +33,7 @@ export class ForestEntity {
     @Prop() ForestPurchase: Forest_Purchase;
     @Prop() Status: string;
     @Prop() Describe: string;
-    @Prop() DateOfPurchase: Date;
+    @Prop() PurchaseDate: Date;
     @Prop() CreateAt: Date;
     @Prop() UpdateAt: Date;
     @Prop() DeleteAt: Date;

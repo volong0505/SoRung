@@ -11,7 +11,7 @@ type CreateForestOptions = Readonly<{
     ForestType: "KEO" | "CAO SU";
     Profit: number;
     ForestPurchase: Forest_Purchase;
-    DateOfPurchase: Date;
+    PurchaseDate: Date;
     Status: string;
     Describe: string
 }> 

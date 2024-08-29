@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class TypeOfForestComponent {
 
-  @Input() type_of_forest = '';
+  @Input() forest_type = '';
 
 }

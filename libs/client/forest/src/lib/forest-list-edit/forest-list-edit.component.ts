@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, NonNullableFormBuilder } from '@angular/forms';
-import { ForestGetDetailRequest, ForestGetDetailResponse, ForestUpsertRequest } from '@so-rung/api-interfaces';
+import { ForestGetDetailRequest, ForestGetDetailResponse, ForestListItem, ForestUpsertRequest } from '@so-rung/api-interfaces';
 import { ForestService } from '../forest.service';
 import { Store } from '@ngrx/store';
 import { editForest, loadForestDetail } from '../+state/forest.actions';
-import { selectDetailForest } from '../+state/forest.selectors';
+import { selectDetailForest, selectForestList } from '../+state/forest.selectors';
 
 @Component({
   selector: 'lib-forest-list-edit',
@@ -13,7 +13,7 @@ import { selectDetailForest } from '../+state/forest.selectors';
 })
 export class ForestListEditComponent {
   visible = false;
-  detail: ForestGetDetailResponse | null = null;
+  detail?: ForestListItem | null = null;
   @Input() id!: string;
   @Output("reload") reload: EventEmitter<any> = new EventEmitter();
 
@@ -50,17 +50,10 @@ export class ForestListEditComponent {
     }
 
   loadDetail() {
-    const params: ForestGetDetailRequest = {
-      id: this.id
-    }
-
-    this.store.dispatch(loadForestDetail(params));
-    this.store.select(selectDetailForest)
-      .subscribe(state => {
-        this.detail = state,
-        this.setValueToForm();
-
-      })
+    this.store.select(selectForestList).subscribe(state => {
+      this.detail = state.find(e => e.id == this.id);
+    })
+  this.setValueToForm()
   }
 
   setValueToForm() {

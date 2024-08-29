@@ -21,7 +21,7 @@ export class ForestQueryImplement implements ForestQuery {
                 Describe: 1,
                 ForestType: 1,
                 Status: 1,
-                DateOfPurchase: 1,
+                PurchaseDate: 1,
                 ForestPurchase: 1,
             })
 
@@ -30,10 +30,13 @@ export class ForestQueryImplement implements ForestQuery {
             forest_owner: e.ForestOwner,
             forest_location: e.ForestLocation,
             describe: e.Describe,
-            type_of_forest: e.ForestType,
+            forest_type: e.ForestType,
             status: e.Status,
-            date_of_purchase: e.DateOfPurchase,
-            purchase_price: e.ForestPurchase.PurchasePrice
+            purchase_date: e.PurchaseDate,
+            purchase_price: e.ForestPurchase.PurchasePrice,
+            profit: e.Profit,
+            labor_cost: e.ForestPurchase.LaborCost,
+            transport_cost: e.ForestPurchase.TransportCost
         }))
 
         return {
@@ -50,10 +53,10 @@ export class ForestQueryImplement implements ForestQuery {
                     ForestLocation: 1,
                     ForestPurchase: 1,
                     Profit: 1,
-                    DateOfPurchase: 1,
+                    PurchaseDate: 1,
                     Status: 1,
                     ForestType: 1,
-                    Describe: 1,
+                    Describe: 1
                 })
 
         return {
@@ -61,7 +64,7 @@ export class ForestQueryImplement implements ForestQuery {
             forest_owner: raw_data?.ForestOwner,
             forest_location: raw_data?.ForestLocation,
             profit: raw_data?.Profit,
-            purchase_date: raw_data?.DateOfPurchase,
+            purchase_date: raw_data?.PurchaseDate,
             status: raw_data?.Status,
             forest_type: raw_data?.ForestType,
             describe: raw_data?.Describe,

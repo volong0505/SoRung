@@ -20,9 +20,9 @@
             </nz-page-header>
           </div>
 
-        <lib-weighment-slip-list *ngIf="!updateMode"/>
+        <!-- <lib-weighment-slip-list *ngIf="!updateMode"/> -->
 
-        <lib-weighment-slip-edit *ngIf="updateMode" [data]="data"/>
+        <lib-weighment-slip-edit  [data]="data"/>
     </div>
 
     <div class="item" nz-col nzSpan="6">
@@ -34,7 +34,6 @@
 
             <div  class="item"  nz-col nzSpan="24">
                 <lib-weighment-slip-statistic />
-
             </div>
         </div>
 
